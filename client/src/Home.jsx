@@ -40,7 +40,8 @@ export default class Home extends Component {
             method: 'GET',
             url: apiRestarauntUri
         }
-        this.restResponse = restRequest(requestParams)
+        
+        return restRequest(requestParams)
         .then(data => {
             this.setState({
                 data,
@@ -53,19 +54,22 @@ export default class Home extends Component {
     }
 
     initRestaurant = () => {
-
+        this.setState(() => {
+            return {
+                loading: true
+            }
+        });
         let requestParams = {
             method: 'POST',
             url: apiRestarauntInitUri
         }
 
         this.restResponse = restRequest(requestParams)
-        .then(data => {
+        .then(() => {
+            return this.fetch()
+        })
+        .then(() => {
             alert('Successfully inserted restaurants');
-            this.setState({
-                data: data,
-                loading: false
-            });
         })
         .catch (function(error){
             console.log(error);
