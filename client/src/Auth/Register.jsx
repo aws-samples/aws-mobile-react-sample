@@ -156,7 +156,7 @@ export default class Register extends Component {
     }
 
     checkPhonePattern = (phone) => {
-        return /\+1[0-9]{3}[0-9]{3}[0-9]{4}$/.test(phone);
+        return /^\+?[1-9]\d{1,14}$/.test(phone);
     }
 
     countDownResendVerificationCode = () => {
