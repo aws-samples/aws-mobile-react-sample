@@ -44,6 +44,7 @@
     "babel-polyfill": "^6.26.0",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "graphql": "^0.13.2",
     "node-uuid": "^1.4.8",
     "path": "^0.12.7",
     "querystring-browser": "^1.0.4",
